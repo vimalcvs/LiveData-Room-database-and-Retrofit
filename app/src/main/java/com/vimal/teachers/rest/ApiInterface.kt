@@ -9,7 +9,7 @@ interface ApiInterface {
 
     @get:GET("app_api/dummy_users_list")
     @get:Headers(CACHE, AGENT)
-    val wallpapers: Call<CallbackTeacher?>?
+    val getList: Call<CallbackTeacher?>?
 
     companion object {
         const val CACHE: String = "Cache-Control: max-age=640000"

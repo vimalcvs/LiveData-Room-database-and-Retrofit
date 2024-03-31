@@ -11,7 +11,7 @@ import com.vimal.teachers.models.ModelFavorite
 @Database(entities = [ModelFavorite::class], version = 1)
 abstract class FavoriteDB : RoomDatabase() {
 
-    abstract fun setFavoriteDao(): FavoriteDao
+    abstract fun getFavoriteDao(): FavoriteDao
 
     companion object {
         @Volatile

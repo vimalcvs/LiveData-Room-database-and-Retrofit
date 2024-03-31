@@ -14,8 +14,8 @@ class Repository(context: Context?) {
 
     init {
         val database = FavoriteDB.getDatabase(context!!)
-        favoriteDao = database.setFavoriteDao()
-        liveData = favoriteDao.getAllProducts()
+        favoriteDao = database.getFavoriteDao()
+        liveData = favoriteDao.getAllFavorite()
     }
 
     fun allFavorite(): LiveData<List<ModelFavorite>> {
@@ -24,7 +24,7 @@ class Repository(context: Context?) {
 
     fun deleteFavorite(model: ModelFavorite?) {
         try {
-            object : Thread(Runnable { favoriteDao.deleteProductFromFavorite(model!!) }) {
+            object : Thread(Runnable { favoriteDao.deleteFavorite(model!!) }) {
             }.start()
         } catch (e: Exception) {
             Utils.getErrors(e)
@@ -33,7 +33,7 @@ class Repository(context: Context?) {
 
     fun insertFavorite(model: ModelFavorite?) {
         try {
-            object : Thread(Runnable { favoriteDao.insertProductToFavorite(model!!) }) {
+            object : Thread(Runnable { favoriteDao.insertFavorite(model!!) }) {
             }.start()
         } catch (e: Exception) {
             Utils.getErrors(e)

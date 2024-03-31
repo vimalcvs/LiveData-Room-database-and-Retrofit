@@ -88,7 +88,7 @@ class FragmentTeachers : Fragment(), AdapterTeacher.OnItemClickListener {
         try {
             binding.included.pvProgress.visibility = View.VISIBLE
             val apiInterface = RestAdapter.createAPI(requireActivity())
-            apiInterface.wallpapers!!.enqueue(object : Callback<CallbackTeacher?> {
+            apiInterface.getList!!.enqueue(object : Callback<CallbackTeacher?> {
                 override fun onResponse(
                     call: Call<CallbackTeacher?>,
                     response: Response<CallbackTeacher?>

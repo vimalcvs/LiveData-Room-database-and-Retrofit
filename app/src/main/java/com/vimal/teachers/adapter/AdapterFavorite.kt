@@ -87,8 +87,8 @@ class AdapterFavorite(private val context: Context, private var list: List<Model
     }
 
     interface OnItemClickListener {
-        fun onItemClick(modelWallpaper: ModelFavorite?)
-        fun onItemDelete(modelWallpaper: ModelFavorite?)
+        fun onItemClick(model: ModelFavorite?)
+        fun onItemDelete(model: ModelFavorite?)
     }
 
     class ViewHolder(val binding: ItemListBinding) : RecyclerView.ViewHolder(

@@ -69,19 +69,19 @@ class FragmentFavorite : Fragment(), AdapterFavorite.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(modelFavorite: ModelFavorite?) {
+    override fun onItemClick(model: ModelFavorite?) {
         try {
             val intent = Intent(requireActivity(), ActivityProfile::class.java)
-            intent.putExtra(Constant.EXTRA_KEY, modelFavorite)
+            intent.putExtra(Constant.EXTRA_KEY, model)
             startActivity(intent)
         } catch (e: Exception) {
             Utils.getErrors(e)
         }
     }
 
-    override fun onItemDelete(modelFavorite: ModelFavorite?) {
+    override fun onItemDelete(model: ModelFavorite?) {
         try {
-            repository.deleteFavorite(modelFavorite)
+            repository.deleteFavorite(model)
             Toast.makeText(requireActivity(), "Deleted to Favorite", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Utils.getErrors(e)

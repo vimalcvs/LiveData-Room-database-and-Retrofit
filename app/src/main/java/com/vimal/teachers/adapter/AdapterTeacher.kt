@@ -103,10 +103,7 @@ class AdapterTeacher(
         return modelLists.size
     }
 
-    fun updateData(newData: MutableList<ModelTeacher?>) {
-        modelLists = newData
-        notifyDataSetChanged()
-    }
+
 
     fun resetData() {
         notifyDataSetChanged()

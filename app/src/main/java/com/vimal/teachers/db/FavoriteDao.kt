@@ -13,13 +13,13 @@ import com.vimal.teachers.models.ModelFavorite
 interface FavoriteDao {
 
     @Query("Select * from favorite_tables")
-    fun getAllProducts(): LiveData<List<ModelFavorite>>
+    fun getAllFavorite(): LiveData<List<ModelFavorite>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertProductToFavorite(modelWallpaper: ModelFavorite)
+    fun insertFavorite(modelFavorite: ModelFavorite)
 
     @Delete
-    fun deleteProductFromFavorite(modelWallpaper: ModelFavorite)
+    fun deleteFavorite(modelFavorite: ModelFavorite)
 
     @Query("SELECT EXISTS (SELECT 1 FROM favorite_tables WHERE id = :id)")
     fun isFavorite(id: Int): Boolean
