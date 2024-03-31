@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="AppearanceToolbar">
+        <item name="android:textSize">22sp</item>
+        <item name="fontFamily">@string/roboto_medium</item>
+        <item name="android:fontFamily">@string/roboto_medium</item>
+    </style>
+
+</resources>
